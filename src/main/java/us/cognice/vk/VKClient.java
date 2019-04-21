@@ -29,7 +29,11 @@ import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import us.cognice.graph.layout.*;
+import us.cognice.graph.layout.Edge;
+import us.cognice.graph.layout.Graph;
+import us.cognice.graph.layout.Layout;
+import us.cognice.graph.layout.MouseGestures;
+import us.cognice.graph.layout.forced.ForcedLayout;
 import us.cognice.vk.model.ImageConverter;
 import us.cognice.vk.model.JsonEdge;
 import us.cognice.vk.model.JsonGraph;
@@ -223,7 +227,7 @@ public class VKClient extends Application {
         Layout layout = new ForcedLayout(container, graph, WIDTH, HEIGHT, 0.7);
         mouseGestures = new MouseGestures(graph, layout);
         graph.getCells().values().forEach(mouseGestures::apply);
-        layout.calculate();
+        layout.start();
         ((BorderPane) container.getBottom()).getRight().setDisable(false);
     }
 

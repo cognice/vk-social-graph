@@ -2,7 +2,7 @@ package us.cognice.vk;
 
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
-import us.cognice.graph.layout.Cell;
+import us.cognice.graph.layout.forced.ForcedLayoutNode;
 import us.cognice.vk.model.ImageConverter;
 import us.cognice.vk.model.JsonUser;
 
@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by Kirill Simonov on 19.06.2017.
  */
-public class VKUser extends Cell {
+public class VKUser extends ForcedLayoutNode {
 
     private String screenName;
     private String firstName;
